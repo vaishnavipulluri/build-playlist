@@ -55,8 +55,12 @@ function App() {
       </div>
       <ul className="suggestions">
         {suggestions.map((song) => (
-          <li key={song.trackId} onClick={() => addSong(song)}>
-            {song.trackName} - {song.artistName}
+          <li key={song.trackId} className="suggestion-item" onClick={() => addSong(song)}>
+            <img src={song.artworkUrl100} alt={song.trackName} className="song-artwork" />
+            <div className="song-info">
+              <span className="song-title">{song.trackName}</span>
+              <span className="song-artist">{song.artistName}</span>
+            </div>
           </li>
         ))}
       </ul>
