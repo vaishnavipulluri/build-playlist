@@ -1,3 +1,5 @@
+import "./App.css";
+
 import React, { useEffect, useState } from "react";
 
 function App() {
@@ -34,7 +36,7 @@ function App() {
           type="text"
           value={newNote}
           onChange={(e) => setNewNote(e.target.value)}
-          placeholder="Enter a note..."
+          placeholder="Enter a song..."
         />
         <button onClick={addNote}>Add Song</button>
       </div>
