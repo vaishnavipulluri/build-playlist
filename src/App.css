@@ -1,22 +1,29 @@
+/* General Styles */
 body {
   font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
+  background-color: #f5f5f5;
+  margin: 0;
+  padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  margin: 0;
+  min-height: 100vh;
 }
 
 .app {
+  width: 90%;
+  max-width: 600px;
   background: white;
   padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  width: 350px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
   text-align: center;
 }
 
+/* Input Field */
 .input-container {
   margin-bottom: 10px;
 }
@@ -24,32 +31,28 @@ body {
 input {
   width: 100%;
   padding: 10px;
-  font-size: 16px;
   border: 1px solid #ccc;
-  border-radius: 4px;
+  border-radius: 5px;
+  font-size: 16px;
 }
 
+/* Suggestions */
 .suggestions {
   list-style: none;
   padding: 0;
   margin: 10px 0;
-  background: white;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  max-width: 100%;
+  max-height: 200px;
+  overflow-y: auto;
+  border-radius: 5px;
 }
 
 .suggestion-item {
   display: flex;
   align-items: center;
   padding: 10px;
-  cursor: pointer;
   border-bottom: 1px solid #ddd;
+  cursor: pointer;
   transition: background 0.2s;
-}
-
-.suggestion-item:last-child {
-  border-bottom: none;
 }
 
 .suggestion-item:hover {
@@ -57,9 +60,9 @@ input {
 }
 
 .song-artwork {
-  width: 40px;
-  height: 40px;
-  border-radius: 4px;
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
   margin-right: 10px;
 }
 
@@ -70,18 +73,18 @@ input {
 
 .song-title {
   font-weight: bold;
-  font-size: 14px;
 }
 
 .song-artist {
-  font-size: 12px;
+  font-size: 14px;
   color: #666;
 }
 
+/* Playlist */
 .playlist {
   list-style: none;
   padding: 0;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 .playlist-item {
@@ -89,21 +92,68 @@ input {
   align-items: center;
   justify-content: space-between;
   padding: 10px;
-  background: #f9f9f9;
-  border-radius: 4px;
-  margin-bottom: 8px;
+  border-radius: 5px;
+  background: #fff;
+  margin-bottom: 10px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-button {
-  background: #28a745;
-  color: white;
+.playlist-info {
+  display: flex;
+  align-items: center;
+}
+
+.playlist-artwork {
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.playlist-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.play-button {
+  padding: 8px 15px;
   border: none;
-  padding: 6px 12px;
-  border-radius: 4px;
+  background: #007bff;
+  color: white;
+  border-radius: 5px;
   cursor: pointer;
-  font-size: 14px;
 }
 
-button:hover {
-  background: #218838;
+.play-button:hover {
+  background: #0056b3;
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+  .app {
+    width: 95%;
+    padding: 15px;
+  }
+
+  .playlist-item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .playlist-info {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .playlist-artwork {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 5px;
+  }
+
+  .play-button {
+    width: 100%;
+    margin-top: 5px;
+  }
 }

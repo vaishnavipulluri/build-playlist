@@ -67,9 +67,15 @@ function App() {
       <ul className="playlist">
         {songs.map((song, index) => (
           <li key={index} className="playlist-item">
-            {song.trackName} - {song.artistName}
+            <div className="playlist-info">
+              <img src={song.artworkUrl100} alt={song.trackName} className="playlist-artwork" />
+              <div className="playlist-text">
+                <span className="song-title">{song.trackName}</span>
+                <span className="song-artist">{song.artistName}</span>
+              </div>
+            </div>
             {song.previewUrl && (
-              <button onClick={() => togglePlay(song.previewUrl)}>
+              <button className="play-button" onClick={() => togglePlay(song.previewUrl)}>
                 {playingSong === song.previewUrl ? "Pause" : "Play"}
               </button>
             )}
